@@ -1,0 +1,45 @@
+
+
+Rules:
+
+// basic
+	type = "INT" | "CHAR" | "STRING"
+
+	varAssignation = identifier "=" ( expression | identifier)
+	ifStatment = "if(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
+	whileStatment = "while(" condition ")" "{" {statement} "}" "}"
+	doWhileStatment = "do {" {statment} "} while(" condition ")"
+	forStatment = "for(" identifier "=" numericExpression ";" boolExpression ";" expression ")" "{" {statment} "}" 
+	statment = varDeclaration | ifStatment | whileStatment | doWhileStatment | forStatment
+
+// expressions
+
+	expression = numericExpression | stringExpression
+	numericExpression = numericalConstant | identifier | 
+						numericExpression ("+", "-", "/", "*") numericExpression |
+						"("numericExpression ("+", "-", "/", "*") numericExpression")"
+	strngExpression = stringConstant | identifier | stringExpression + stringExpression
+	boolExpresion = boolConstant | identifier | identifier binary identifier { binary identifier}
+
+// asignation
+
+	varDeclaration = "var" sameRowAssignation
+	sameRowDeclaration = identifier ["=" expression] { "," identifier ["=" expression]}
+
+// math
+
+	expression = term | expression ("+" | "-") term
+	term = factor | term ("+", "-", "/", "*") factor
+	factor = identifier | integer | "(" expression ")"
+
+// logical
+
+	relation = "<" | "<=" | "==" | ">=" | ">"
+	binary = "or" | "and"
+	condition = expression (relation | binary) expression | expression
+
+// functions
+
+	functionDefinition = "def" functionName "(" {type identifier} ")" "{" {statment} "}"
+	functinoCall = functionName({identifier})
+	functionName = "read" | "write"

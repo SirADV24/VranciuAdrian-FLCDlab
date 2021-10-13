@@ -1,0 +1,20 @@
+// compute the sum of n numbers
+
+var n, sum number;
+
+read(n);
+
+sum = 0;
+
+loop(i in interval(0, n)):
+	var x number;
+	
+	read(x);
+
+	sum = sum + x;
+
+write(sum);
+
+
+
+
