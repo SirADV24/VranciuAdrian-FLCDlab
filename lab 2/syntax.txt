@@ -2,6 +2,8 @@
 
 Rules:
 
+	program = "{" statement {statement} "}"
+
 // basic
 	type = "INT" | "CHAR" | "STRING"
 
