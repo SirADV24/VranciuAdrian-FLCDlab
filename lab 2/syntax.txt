@@ -5,14 +5,16 @@ Rules:
 	program = "{" statement {statement} "}"
 
 // basic
-	type = "INT" | "CHAR" | "STRING"
+	type = "INT" | "CHAR" | "STRING" | arrayType
+	arrayDeclaration = 
 
-	varAssignation = identifier "=" ( expression | identifier)
+	varStatment = identifier "=" ( expression | identifier)
+	listStatment = "list" "<" type ">" identifier
 	ifStatment = "if(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
 	whileStatment = "while(" condition ")" "{" {statement} "}" "}"
 	doWhileStatment = "do {" {statment} "} while(" condition ")"
 	forStatment = "for(" identifier "=" numericExpression ";" boolExpression ";" expression ")" "{" {statment} "}" 
-	statment = varDeclaration | ifStatment | whileStatment | doWhileStatment | forStatment
+	statment = varStatment | ifStatment | whileStatment | doWhileStatment | forStatment | listStatment
 
 // expressions
 
