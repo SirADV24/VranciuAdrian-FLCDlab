@@ -1,0 +1,4 @@
+
+
+- lexic
+	- character should not have the first qutoes set
