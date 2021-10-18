@@ -6,8 +6,7 @@ Rules:
 
 // basic
 	type = "INT" | "CHAR" | "STRING" | arrayType
-	arrayDeclaration = 
-
+	arrayDeclaration = identifier "= array of" type
 	varStatment = identifier "=" ( expression | identifier)
 	listStatment = "list" "<" type ">" identifier
 	ifStatment = "if(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
