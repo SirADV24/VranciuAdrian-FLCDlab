@@ -1,9 +1,6 @@
 """
-    git link: 
-
     alphabetically binary search tree, both constants and identifers represented by the same st
-
-
+    
     Code logic:
         
         1. Binary search tree structure
