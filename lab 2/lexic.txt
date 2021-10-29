@@ -24,7 +24,7 @@ Lexic:
 	    a sequence of letters and digits, might start with $ but only at the beggining
 	    	letter = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
 	    	digit = "0" | "1" | ... | "9"
-	    	identifier = "$" | { letter | digit | "_" }
+	    	identifier = "$" | letter | { letter | digit | "_" }
 
 	- constants :
 		- char :

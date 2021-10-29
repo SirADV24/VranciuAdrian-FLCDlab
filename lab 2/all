@@ -1,0 +1,127 @@
+// i'm allowed to upload only 1 file, hope this works
+
+
+//// LEXIC
+
+Alphabet:
+ - Decimal digits (0-9)
+ - English alphabet (A-Z) ans (a-z)
+ - Charactes: '_', '$'
+
+
+Lexic:
+
+	- special symbols:
+		- operators: +, -, *, /, %, <, <=, >, >=, and, or
+		- separators: [], {} , : , ;
+					  space, newline
+		- reserverd words: int, char, double, long
+						   char, string,
+						   Object, Class, Interface,
+						   list, dict,
+						   if, else
+						   while , do while
+						   for, forEach
+						   null, return,
+						   function
+
+	- identifiers :
+	    a sequence of letters and digits, might start with $ but only at the beggining
+	    	letter = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
+	    	digit = "0" | "1" | ... | "9"
+	    	identifier = "$" | { letter | digit | "_" }
+
+	- constants :
+		- char :
+			character =  "'" "digit" | "letter" "'"
+
+		- int :
+			["-"] ( 1 | 2 | ... | 9 ) { digit }
+
+		- string:
+			string = """ char {char} """
+
+		- boolean:
+			boolean = true | false
+
+
+
+///// SYNTAX
+
+
+
+Rules:
+
+	program = "{" statement {statement} "}"
+
+// basic
+	type = "INT" | "CHAR" | "STRING" | arrayType
+	arrayDeclaration = identifier "= array of" type
+	varStatment = identifier "=" ( expression | identifier)
+	listStatment = "list" "<" type ">" identifier
+	ifStatment = "if(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
+	whileStatment = "while(" condition ")" "{" {statement} "}" "}"
+	doWhileStatment = "do {" {statment} "} while(" condition ")"
+	forStatment = "for(" identifier "=" numericExpression ";" boolExpression ";" expression ")" "{" {statment} "}" 
+	statment = varStatment | ifStatment | whileStatment | doWhileStatment | forStatment | listStatment
+
+// expressions
+
+	expression = numericExpression | stringExpression
+	numericExpression = numericalConstant | identifier | 
+						numericExpression ("+", "-", "/", "*") numericExpression |
+						"("numericExpression ("+", "-", "/", "*") numericExpression")"
+	strngExpression = stringConstant | identifier | stringExpression + stringExpression
+	boolExpresion = boolConstant | identifier | identifier binary identifier { binary identifier}
+
+// asignation
+
+	varDeclaration = "var" sameRowAssignation
+	sameRowDeclaration = identifier ["=" expression] { "," identifier ["=" expression]}
+
+// math
+
+	expression = term | expression ("+" | "-") term
+	term = factor | term ("+", "-", "/", "*") factor
+	factor = identifier | integer | "(" expression ")"
+
+// logical
+
+	relation = "<" | "<=" | "==" | ">=" | ">"
+	binary = "or" | "and"
+	condition = expression (relation | binary) expression | expression
+
+// functions
+
+	functionDefinition = "def" functionName "(" {type identifier} ")" "{" {statment} "}"
+	functinoCall = functionName({identifier})
+	functionName = "read" | "write"
+
+
+///// TOKEN
+
+read
+write
+int
+char
+string
+<
+<=
+>
+>=
+=
+==
+or
+and
+var
+def
+if
+else
+for
+do
+while
++
+-
+/
+*
+,
