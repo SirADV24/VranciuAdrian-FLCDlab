@@ -1,25 +1,3 @@
-read
-write
-int
-char
-string
-<
-<=
->
->=
-=
-==
-or
-and
-var
-def
-if
-else
-for
-do
-while
-+
--
-/
-*
-,
+read write number char string when elseWhen else var loop
+<= >= == or and + - < > = / *
+, \n \t ; space ( ) { }

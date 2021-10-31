@@ -2,18 +2,15 @@
 
 Rules:
 
-	program = "{" statement {statement} "}"
-
 // basic
-	type = "INT" | "CHAR" | "STRING" | arrayType
-	arrayDeclaration = identifier "= array of" type
-	varStatment = identifier "=" ( expression | identifier)
-	listStatment = "list" "<" type ">" identifier
+	type = "NUMBER" | "CHAR" | "STRING"
+
+	varAssignation = identifier "=" ( expression | identifier) type
 	ifStatment = "if(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
 	whileStatment = "while(" condition ")" "{" {statement} "}" "}"
 	doWhileStatment = "do {" {statment} "} while(" condition ")"
-	forStatment = "for(" identifier "=" numericExpression ";" boolExpression ";" expression ")" "{" {statment} "}" 
-	statment = varStatment | ifStatment | whileStatment | doWhileStatment | forStatment | listStatment
+	forStatment = "loop(" identifier "=" numericExpression ";" boolExpression ";" expression ")" "{" {statment} "}" 
+	statment = varDeclaration | ifStatment | whileStatment | doWhileStatment | forStatment
 
 // expressions
 
