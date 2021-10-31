@@ -3,8 +3,9 @@ Logic:
 - we used regex to find the patterns of identifiers/constants. For proof go to regex_proof
 
 2.Tokens split:
-we used the following logic in splitting the tokens:
-if we want to split a string by another ( i.e. split the following text by "," "Ana, are, mere" ) but also keeping the separators ( in our case "," ) we will replace the separator with DEFAULTseparatorDEFAULT and then split by DEFAULT
+  we used the following logic in splitting the tokens:
+  if we want to split a string by another ( i.e. split the following text by "," "Ana, are, mere" ) but also keeping the separators ( in our case "," ) we will replace the 
+  separator with DEFAULTseparatorDEFAULT and then split by DEFAULT
 
 example: separator : ",", string: "Ana, are, mere"
 -> "AnaDEFAULT,DEFAULT areDEFAULT,DEFAULT mere"
