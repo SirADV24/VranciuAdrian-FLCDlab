@@ -1,0 +1,5 @@
+Q:A B C
+E:1 2 
+q0:A
+F:A C
+S: A 1 B, B 1 B, B 2 C, A 2 C
