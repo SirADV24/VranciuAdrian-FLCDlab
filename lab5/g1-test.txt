@@ -1,0 +1,7 @@
+Nonterminals : S|A|B|C
+Alphabet: a|b|c|d
+Starting symbol : S
+Productions :
+S -> a S | b A | c C
+B -> b B
+C -> c B | b A
